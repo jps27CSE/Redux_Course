@@ -24,7 +24,7 @@ const Navbar = ({ name }) => {
         <div className="navbarRight">
           <img
             className="avatar"
-            src="https://images.pexels.com/photos/3024627/pexels-photo-3024627.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmR4fWTeUGYrx2xij5yn1T-ue23HFVG70aCw&usqp=CAU"
             alt=""
           />
           <span className="navbarName">{name}</span>
