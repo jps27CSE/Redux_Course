@@ -2,10 +2,12 @@ import React from "react";
 import Warning from "../warning/Warning";
 import "./update.css";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Update() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const user = useSelector((state) => state.user);
 
   return (
     <div className="update">
@@ -20,7 +22,7 @@ export default function Update() {
               <div className="profilePic">
                 <img
                   className="avatar"
-                  src="https://images.pexels.com/photos/3024627/pexels-photo-3024627.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmR4fWTeUGYrx2xij5yn1T-ue23HFVG70aCw&usqp=CAU"
                   alt=""
                 />
                 <span className="change">Change</span>
@@ -31,7 +33,8 @@ export default function Update() {
               <input
                 className="formInput"
                 type="text"
-                placeholder="John"
+                placeholder={user.name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="formItem">
@@ -39,18 +42,15 @@ export default function Update() {
               <input
                 className="formInput"
                 type="text"
-                placeholder="john@gmail.com"
+                placeholder={user.email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="formItem">
               <label>Password</label>
               <input className="formInput" type="password" />
             </div>
-            <button
-              className="updateButton"
-            >
-              Update
-            </button>
+            <button className="updateButton">Update</button>
           </form>
         </div>
       </div>
